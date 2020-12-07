@@ -1,73 +1,73 @@
 
 # Table of Contents
 
-1.  [Dataset](#org49fb2c2)
-    1.  [Variables](#orgd6bc55f)
-    2.  [Data sources](#org98031a7)
-2.  [Prototyping](#org7227fc6)
-    1.  [Features](#org8f3b227)
-    2.  [Wireframe](#org80c763d)
-3.  [Development](#orgf13c97b)
-    1.  [Why did we pick Dash?](#orgf31be37)
-    2.  [Architecture](#orgc99d593)
-        1.  [Structure of `app.py`](#org0a2a5eb)
-            -   [Globals](#org6735779)
-            -   [Layout](#org4e06c70)
-            -   [Callbacks functions](#orgae95974)
-    3.  [Visual identity guidelines](#orgfeefe86)
-        1.  [Colors](#org188f030)
-            -   [Primary colors](#orgbd6a26b)
-            -   [Secondary colors](#orgeb3d231)
-        2.  [Fonts](#orgcd04d00)
-            -   [Primary fonts](#org3b3bc84)
-            -   [Secondary fonts](#org00c6f82)
-        3.  [Logo](#orge7a0dc5)
-            -   [Symbol](#orgd91d81d)
-            -   [Logotype](#orgf1bc2c0)
-    4.  [How to contribute](#org99a8352)
-        1.  [Setting up a new Git repository](#org960c680)
-        2.  [Adding or modifying owned files (`push`)](#org632c11d)
-        3.  [Submit proposed changes to review](#orgb63dfe2)
-4.  [Tools that we used](#org4a48c28)
+1.  [Dataset](#org6af3af6)
+    1.  [Variables](#org59f4cd8)
+    2.  [Data sources](#org199aa20)
+2.  [Prototyping](#orga475819)
+    1.  [Features](#org0126bdc)
+    2.  [Wireframe](#org229a195)
+3.  [Development](#orgd46f015)
+    1.  [Why did we pick Dash?](#org0c44cfe)
+    2.  [Architecture](#org9b7c9c3)
+        1.  [Structure of `app.py`](#orgd72ab21)
+            -   [Globals](#org1140793)
+            -   [Layout](#org93311b5)
+            -   [Callbacks functions](#orge434711)
+    3.  [Visual identity guidelines](#orgf1cc28b)
+        1.  [Colors](#orgc120995)
+            -   [Primary colors](#org1973bbb)
+            -   [Secondary colors](#org3ccd105)
+        2.  [Fonts](#orgc8b665f)
+            -   [Primary fonts](#org4142988)
+            -   [Secondary fonts](#org437d963)
+        3.  [Logo](#org87449ce)
+            -   [Symbol](#org897bf7d)
+            -   [Logotype](#org9b3e358)
+    4.  [How to contribute](#org8f552ec)
+        1.  [Setting up a new Git repository](#org5f151fb)
+        2.  [Adding or modifying owned files (`push`)](#orgf8e69c2)
+        3.  [Submit proposed changes to review](#org8f79e20)
+4.  [Tools that we used](#orgb969a81)
 
 
 
-<a id="org49fb2c2"></a>
+<a id="org6af3af6"></a>
 
 # Dataset
 
 
-<a id="orgd6bc55f"></a>
+<a id="org59f4cd8"></a>
 
 ## Variables
 
 
-<a id="org98031a7"></a>
+<a id="org199aa20"></a>
 
 ## Data sources
 
 
-<a id="org7227fc6"></a>
+<a id="orga475819"></a>
 
 # Prototyping
 
 
-<a id="org8f3b227"></a>
+<a id="org0126bdc"></a>
 
 ## Features
 
 
-<a id="org80c763d"></a>
+<a id="org229a195"></a>
 
 ## Wireframe
 
 
-<a id="orgf13c97b"></a>
+<a id="orgd46f015"></a>
 
 # Development
 
 
-<a id="orgf31be37"></a>
+<a id="org0c44cfe"></a>
 
 ## Why did we pick [Dash](https://plotly.com/dash/)?
 
@@ -139,17 +139,17 @@ According to following benchmarck the team decided to develop the PoC with ****D
 ****Adaptability****: Based on how flexible and opinionated the library is.
 
 
-<a id="orgc99d593"></a>
+<a id="org9b7c9c3"></a>
 
 ## Architecture
 
 
-<a id="org0a2a5eb"></a>
+<a id="orgd72ab21"></a>
 
 ### Structure of `app.py`
 
 
-<a id="org6735779"></a>
+<a id="org1140793"></a>
 
 #### Globals
 
@@ -169,72 +169,72 @@ According to following benchmarck the team decided to develop the PoC with ****D
 ##### Global functions
 
 
-<a id="org4e06c70"></a>
+<a id="org93311b5"></a>
 
 #### Layout
 
 
-<a id="orgae95974"></a>
+<a id="orge434711"></a>
 
 #### Callbacks functions
 
 
-<a id="orgfeefe86"></a>
+<a id="orgf1cc28b"></a>
 
 ## Visual identity guidelines
 
 
-<a id="org188f030"></a>
+<a id="orgc120995"></a>
 
 ### Colors
 
 
-<a id="orgbd6a26b"></a>
+<a id="org1973bbb"></a>
 
 #### Primary colors
 
 
-<a id="orgeb3d231"></a>
+<a id="org3ccd105"></a>
 
 #### Secondary colors
 
 
-<a id="orgcd04d00"></a>
+<a id="orgc8b665f"></a>
 
 ### Fonts
 
 
-<a id="org3b3bc84"></a>
+<a id="org4142988"></a>
 
 #### Primary fonts
 
 
-<a id="org00c6f82"></a>
+<a id="org437d963"></a>
 
 #### Secondary fonts
 
 
-<a id="orge7a0dc5"></a>
+<a id="org87449ce"></a>
 
 ### Logo
 
 
-<a id="orgd91d81d"></a>
+<a id="org897bf7d"></a>
 
 #### Symbol
 
 
-<a id="orgf1bc2c0"></a>
+<a id="org9b3e358"></a>
 
 #### Logotype
 
 
-<a id="org99a8352"></a>
+<a id="org8f552ec"></a>
 
 ## How to contribute
 
 
-<a id="org960c680"></a>
+<a id="org5f151fb"></a>
 
 ### Setting up a new Git repository
 
@@ -245,7 +245,7 @@ According to following benchmarck the team decided to develop the PoC with ****D
 -   Ask to join our GitHub
 
 
-<a id="org632c11d"></a>
+<a id="orgf8e69c2"></a>
 
 ### Adding or modifying owned files (`push`)
 
@@ -258,7 +258,7 @@ When adding a new file or modifying a file that you own, do:
 Where `filename` is the name of the file
 
 
-<a id="orgb63dfe2"></a>
+<a id="org8f79e20"></a>
 
 ### Submit proposed changes to review
 
@@ -281,7 +281,7 @@ When modifying an existing file, if you're not its owner, you have to submit the
 
 <tbody>
 <tr>
-<td class="org-left">line</td>
+<td class="org-left">linetonthat</td>
 <td class="org-left">??</td>
 </tr>
 
@@ -317,7 +317,7 @@ Then go on our [GitHub](https://github.com/dataforgoodfr/batch8_worldbank),
 -   click on `create pull request`
 
 
-<a id="org4a48c28"></a>
+<a id="orgb969a81"></a>
 
 # Tools that we used
 
