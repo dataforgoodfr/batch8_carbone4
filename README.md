@@ -1,73 +1,73 @@
 
 # Table of Contents
 
-1.  [Dataset](#org6af3af6)
-    1.  [Variables](#org59f4cd8)
-    2.  [Data sources](#org199aa20)
-2.  [Prototyping](#orga475819)
-    1.  [Features](#org0126bdc)
-    2.  [Wireframe](#org229a195)
-3.  [Development](#orgd46f015)
-    1.  [Why did we pick Dash?](#org0c44cfe)
-    2.  [Architecture](#org9b7c9c3)
-        1.  [Structure of `app.py`](#orgd72ab21)
-            -   [Globals](#org1140793)
-            -   [Layout](#org93311b5)
-            -   [Callbacks functions](#orge434711)
-    3.  [Visual identity guidelines](#orgf1cc28b)
-        1.  [Colors](#orgc120995)
-            -   [Primary colors](#org1973bbb)
-            -   [Secondary colors](#org3ccd105)
-        2.  [Fonts](#orgc8b665f)
-            -   [Primary fonts](#org4142988)
-            -   [Secondary fonts](#org437d963)
-        3.  [Logo](#org87449ce)
-            -   [Symbol](#org897bf7d)
-            -   [Logotype](#org9b3e358)
-    4.  [How to contribute](#org8f552ec)
-        1.  [Setting up a new Git repository](#org5f151fb)
-        2.  [Adding or modifying owned files (`push`)](#orgf8e69c2)
-        3.  [Submit proposed changes to review](#org8f79e20)
-4.  [Tools that we used](#orgb969a81)
+1.  [Dataset](#org3dd9f02)
+    1.  [Variables](#orga515b07)
+    2.  [Data sources](#org45071ac)
+2.  [Prototyping](#orgb16eece)
+    1.  [Features](#org4d62125)
+    2.  [Wireframe](#orgc75fbbf)
+3.  [Development](#org5d7c271)
+    1.  [Why did we pick Dash?](#org6bb8b0f)
+    2.  [Architecture](#org62034f7)
+        1.  [Structure of `app.py`](#orgc5a495b)
+            -   [Globals](#orgdf50091)
+            -   [Layout](#orgcf27bb2)
+            -   [Callbacks functions](#org6c0d94c)
+    3.  [Visual identity guidelines](#org62126d5)
+        1.  [Colors](#org7e9022a)
+            -   [Primary colors](#org1d71a13)
+            -   [Secondary colors](#org796fa6a)
+        2.  [Fonts](#org532f3e2)
+            -   [Primary fonts](#orged276ed)
+            -   [Secondary fonts](#orgaebfa1f)
+        3.  [Logo](#org036d018)
+            -   [Symbol](#org7a973bc)
+            -   [Logotype](#org26eff21)
+    4.  [How to contribute](#org5a4d266)
+        1.  [Setting up a new Git repository](#orgf75e7bc)
+        2.  [Adding or modifying owned files (`push`)](#orgf591423)
+        3.  [Submit proposed changes to review](#orga412103)
+4.  [Tools that we used](#org83fe082)
 
 
 
-<a id="org6af3af6"></a>
+<a id="org3dd9f02"></a>
 
 # Dataset
 
 
-<a id="org59f4cd8"></a>
+<a id="orga515b07"></a>
 
 ## Variables
 
 
-<a id="org199aa20"></a>
+<a id="org45071ac"></a>
 
 ## Data sources
 
 
-<a id="orga475819"></a>
+<a id="orgb16eece"></a>
 
 # Prototyping
 
 
-<a id="org0126bdc"></a>
+<a id="org4d62125"></a>
 
 ## Features
 
 
-<a id="org229a195"></a>
+<a id="orgc75fbbf"></a>
 
 ## Wireframe
 
 
-<a id="orgd46f015"></a>
+<a id="org5d7c271"></a>
 
 # Development
 
 
-<a id="org0c44cfe"></a>
+<a id="org6bb8b0f"></a>
 
 ## Why did we pick [Dash](https://plotly.com/dash/)?
 
@@ -139,17 +139,17 @@ According to following benchmarck the team decided to develop the PoC with ****D
 ****Adaptability****: Based on how flexible and opinionated the library is.
 
 
-<a id="org9b7c9c3"></a>
+<a id="org62034f7"></a>
 
 ## Architecture
 
 
-<a id="orgd72ab21"></a>
+<a id="orgc5a495b"></a>
 
 ### Structure of `app.py`
 
 
-<a id="org1140793"></a>
+<a id="orgdf50091"></a>
 
 #### Globals
 
@@ -169,83 +169,83 @@ According to following benchmarck the team decided to develop the PoC with ****D
 ##### Global functions
 
 
-<a id="org93311b5"></a>
+<a id="orgcf27bb2"></a>
 
 #### Layout
 
 
-<a id="orge434711"></a>
+<a id="org6c0d94c"></a>
 
 #### Callbacks functions
 
 
-<a id="orgf1cc28b"></a>
+<a id="org62126d5"></a>
 
 ## Visual identity guidelines
 
 
-<a id="orgc120995"></a>
+<a id="org7e9022a"></a>
 
 ### Colors
 
 
-<a id="org1973bbb"></a>
+<a id="org1d71a13"></a>
 
 #### Primary colors
 
 
-<a id="org3ccd105"></a>
+<a id="org796fa6a"></a>
 
 #### Secondary colors
 
 
-<a id="orgc8b665f"></a>
+<a id="org532f3e2"></a>
 
 ### Fonts
 
 
-<a id="org4142988"></a>
+<a id="orged276ed"></a>
 
 #### Primary fonts
 
 
-<a id="org437d963"></a>
+<a id="orgaebfa1f"></a>
 
 #### Secondary fonts
 
 
-<a id="org87449ce"></a>
+<a id="org036d018"></a>
 
 ### Logo
 
 
-<a id="org897bf7d"></a>
+<a id="org7a973bc"></a>
 
 #### Symbol
 
 
-<a id="org9b3e358"></a>
+<a id="org26eff21"></a>
 
 #### Logotype
 
 
-<a id="org8f552ec"></a>
+<a id="org5a4d266"></a>
 
 ## How to contribute
 
 
-<a id="org5f151fb"></a>
+<a id="orgf75e7bc"></a>
 
 ### Setting up a new Git repository
 
 -   Clone project locally
     
         $ git init
-        $ git clone https://github.com/dataforgoodfr/batch8_worldbank/tree/master/plateforme
+        $ git clone https://github.com/dataforgoodfr/batch8_carbon4/tree/master/plateforme
 -   Ask to join our GitHub
 
 
-<a id="orgf8e69c2"></a>
+<a id="orgf591423"></a>
 
 ### Adding or modifying owned files (`push`)
 
@@ -258,7 +258,7 @@ When adding a new file or modifying a file that you own, do:
 Where `filename` is the name of the file
 
 
-<a id="org8f79e20"></a>
+<a id="orga412103"></a>
 
 ### Submit proposed changes to review
 
@@ -301,23 +301,24 @@ When modifying an existing file, if you're not its owner, you have to submit the
 
 To submit changes reviewees have to do: 
 
+    $ git checkout -b pick_a_branch_name
+    $ git push origin pick_a_branch_name
     $ git add filename
     $ git commit
-    $ git push https://github.com/revieweename/batch8_worldbank
+    $ git checkout master
 
-Where `revieweename` is the GitHub name of the reviewee.
 Then go on our [GitHub](https://github.com/dataforgoodfr/batch8_worldbank), 
 
 -   cilck on `Pull requests`,
 -   then on `New Pull Request`,
 -   click on `compare across forks`,
--   select : `dataforgoodfr/batch8_worldbank` | `base: master` <- `revieweename/batch8_worldbank` | `master`,
+-   select : `dataforgoodfr/batch8_carbon4 | =base: master` <- `revieweename/batch8_carbon4` | `pick_a_branch_name`,
 -   click on `create pull request`
 -   enter GitHub reviewer name in `reviewers`, add title and comment,
 -   click on `create pull request`
 
 
-<a id="orgb969a81"></a>
+<a id="org83fe082"></a>
 
 # Tools that we used
 
