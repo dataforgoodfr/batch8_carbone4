@@ -1,73 +1,73 @@
 
 # Table of Contents
 
-1.  [Dataset](#org3dd9f02)
-    1.  [Variables](#orga515b07)
-    2.  [Data sources](#org45071ac)
-2.  [Prototyping](#orgb16eece)
-    1.  [Features](#org4d62125)
-    2.  [Wireframe](#orgc75fbbf)
-3.  [Development](#org5d7c271)
-    1.  [Why did we pick Dash?](#org6bb8b0f)
-    2.  [Architecture](#org62034f7)
-        1.  [Structure of `app.py`](#orgc5a495b)
-            -   [Globals](#orgdf50091)
-            -   [Layout](#orgcf27bb2)
-            -   [Callbacks functions](#org6c0d94c)
-    3.  [Visual identity guidelines](#org62126d5)
-        1.  [Colors](#org7e9022a)
-            -   [Primary colors](#org1d71a13)
-            -   [Secondary colors](#org796fa6a)
-        2.  [Fonts](#org532f3e2)
-            -   [Primary fonts](#orged276ed)
-            -   [Secondary fonts](#orgaebfa1f)
-        3.  [Logo](#org036d018)
-            -   [Symbol](#org7a973bc)
-            -   [Logotype](#org26eff21)
-    4.  [How to contribute](#org5a4d266)
-        1.  [Setting up a new Git repository](#orgf75e7bc)
-        2.  [Adding or modifying owned files (`push`)](#orgf591423)
-        3.  [Submit proposed changes to review](#orga412103)
-4.  [Tools that we used](#org83fe082)
+1.  [Dataset](#org0d21a5d)
+    1.  [Variables](#org7feb939)
+    2.  [Data sources](#orgf83378e)
+2.  [Prototyping](#org39f0f68)
+    1.  [Features](#org850f2ea)
+    2.  [Wireframe](#org00cb457)
+3.  [Development](#org909a422)
+    1.  [Why did we pick Dash?](#org274dca1)
+    2.  [Architecture](#orgbfbe61b)
+        1.  [Structure of `app.py`](#org3834c0b)
+            -   [Globals](#org1a561f9)
+            -   [Layout](#orgc060127)
+            -   [Callbacks functions](#org084a2c5)
+    3.  [Visual identity guidelines](#orgc6f66d4)
+        1.  [Colors](#orgb4c6f8a)
+            -   [Primary colors](#org2a17b83)
+            -   [Secondary colors](#org32f3529)
+        2.  [Fonts](#orgb2a2e6d)
+            -   [Primary fonts](#orgd254b8f)
+            -   [Secondary fonts](#org02fe1e6)
+        3.  [Logo](#orge02fe30)
+            -   [Symbol](#org12fabfa)
+            -   [Logotype](#org697a356)
+    4.  [How to contribute](#orgd249d81)
+        1.  [Setting up a new Git repository](#org72c565e)
+        2.  [Adding or modifying owned files (`push`)](#org8f4a35d)
+        3.  [Submit proposed changes to review (`pull-request`)](#orgcc58583)
+4.  [Tools that we used](#orgc53a177)
 
 
 
-<a id="org3dd9f02"></a>
+<a id="org0d21a5d"></a>
 
 # Dataset
 
 
-<a id="orga515b07"></a>
+<a id="org7feb939"></a>
 
 ## Variables
 
 
-<a id="org45071ac"></a>
+<a id="orgf83378e"></a>
 
 ## Data sources
 
 
-<a id="orgb16eece"></a>
+<a id="org39f0f68"></a>
 
 # Prototyping
 
 
-<a id="org4d62125"></a>
+<a id="org850f2ea"></a>
 
 ## Features
 
 
-<a id="orgc75fbbf"></a>
+<a id="org00cb457"></a>
 
 ## Wireframe
 
 
-<a id="org5d7c271"></a>
+<a id="org909a422"></a>
 
 # Development
 
 
-<a id="org6bb8b0f"></a>
+<a id="org274dca1"></a>
 
 ## Why did we pick [Dash](https://plotly.com/dash/)?
 
@@ -139,17 +139,17 @@ According to following benchmarck the team decided to develop the PoC with ****D
 ****Adaptability****: Based on how flexible and opinionated the library is.
 
 
-<a id="org62034f7"></a>
+<a id="orgbfbe61b"></a>
 
 ## Architecture
 
 
-<a id="orgc5a495b"></a>
+<a id="org3834c0b"></a>
 
 ### Structure of `app.py`
 
 
-<a id="orgdf50091"></a>
+<a id="org1a561f9"></a>
 
 #### Globals
 
@@ -169,72 +169,72 @@ According to following benchmarck the team decided to develop the PoC with ****D
 ##### Global functions
 
 
-<a id="orgcf27bb2"></a>
+<a id="orgc060127"></a>
 
 #### Layout
 
 
-<a id="org6c0d94c"></a>
+<a id="org084a2c5"></a>
 
 #### Callbacks functions
 
 
-<a id="org62126d5"></a>
+<a id="orgc6f66d4"></a>
 
 ## Visual identity guidelines
 
 
-<a id="org7e9022a"></a>
+<a id="orgb4c6f8a"></a>
 
 ### Colors
 
 
-<a id="org1d71a13"></a>
+<a id="org2a17b83"></a>
 
 #### Primary colors
 
 
-<a id="org796fa6a"></a>
+<a id="org32f3529"></a>
 
 #### Secondary colors
 
 
-<a id="org532f3e2"></a>
+<a id="orgb2a2e6d"></a>
 
 ### Fonts
 
 
-<a id="orged276ed"></a>
+<a id="orgd254b8f"></a>
 
 #### Primary fonts
 
 
-<a id="orgaebfa1f"></a>
+<a id="org02fe1e6"></a>
 
 #### Secondary fonts
 
 
-<a id="org036d018"></a>
+<a id="orge02fe30"></a>
 
 ### Logo
 
 
-<a id="org7a973bc"></a>
+<a id="org12fabfa"></a>
 
 #### Symbol
 
 
-<a id="org26eff21"></a>
+<a id="org697a356"></a>
 
 #### Logotype
 
 
-<a id="org5a4d266"></a>
+<a id="orgd249d81"></a>
 
 ## How to contribute
 
 
-<a id="orgf75e7bc"></a>
+<a id="org72c565e"></a>
 
 ### Setting up a new Git repository
 
@@ -245,7 +245,7 @@ According to following benchmarck the team decided to develop the PoC with ****D
 -   Ask to join our GitHub
 
 
-<a id="orgf591423"></a>
+<a id="org8f4a35d"></a>
 
 ### Adding or modifying owned files (`push`)
 
@@ -258,9 +258,9 @@ When adding a new file or modifying a file that you own, do:
 Where `filename` is the name of the file
 
 
-<a id="orga412103"></a>
+<a id="orgcc58583"></a>
 
-### Submit proposed changes to review
+### Submit proposed changes to review (`pull-request`)
 
 When modifying an existing file, if you're not its owner, you have to submit the modifications to its owner (i.e. reviewer). Ownership is distributed as follow :
 
@@ -294,31 +294,33 @@ When modifying an existing file, if you're not its owner, you have to submit the
 
 <tr>
 <td class="org-left">morgandavidson</td>
-<td class="org-left">??</td>
+<td class="org-left">`README.md`</td>
 </tr>
 </tbody>
 </table>
 
-To submit changes reviewees have to do: 
+To submit changes reviewees have to do : 
 
-    $ git checkout -b pick_a_branch_name
-    $ git push origin pick_a_branch_name
+    $ git branch new-branch        #Creates a new branch nammed "new-branch"
+    $ git checkout new-branch   #Switch to "new-branch"
+    # alternatively these two commands can be condensed to "git checkout -b new-branch"
     $ git add filename
     $ git commit
-    $ git checkout master
+    $ git push origin new-branch
+    $ git checkout master          #Switch back to master
 
-Then go on our [GitHub](https://github.com/dataforgoodfr/batch8_worldbank), 
+Then go on our [GitHub](https://github.com/dataforgoodfr/batch8_worldbank), and simply click on `compare & pull request` and pick a reviewer. Or do
 
 -   cilck on `Pull requests`,
 -   then on `New Pull Request`,
 -   click on `compare across forks`,
--   select : `dataforgoodfr/batch8_carbon4 | =base: master` <- `revieweename/batch8_carbon4` | `pick_a_branch_name`,
+-   select : `dataforgoodfr/batch8_carbon4 | =base: master` <- `revieweename/batch8_carbon4` | `new-branch`,
 -   click on `create pull request`
 -   enter GitHub reviewer name in `reviewers`, add title and comment,
 -   click on `create pull request`
 
 
-<a id="org83fe082"></a>
+<a id="orgc53a177"></a>
 
 # Tools that we used
 
