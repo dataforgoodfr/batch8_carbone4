@@ -239,9 +239,11 @@ According to following benchmarck the team decided to develop the PoC with ****D
 ### Setting up a new Git repository
 
 -   Clone project locally
-    
-        $ git init
-        $ git clone https://github.com/dataforgoodfr/batch8_carbon4/tree/master/plateforme
+
+```sh
+git init
+git clone https://github.com/dataforgoodfr/batch8_carbon4/tree/master/plateforme
+```
 -   Ask to join our GitHub
 
 
@@ -251,9 +253,11 @@ According to following benchmarck the team decided to develop the PoC with ****D
 
 When adding a new file or modifying a file that you own, do:
 
-    $ git add filename
-    $ git commit
-    $ git push
+```sh
+git add filename
+git commit
+git push
+```
 
 Where `filename` is the name of the file
 
@@ -299,15 +303,17 @@ When modifying an existing file, if you're not its owner, you have to submit the
 </tbody>
 </table>
 
-To submit changes reviewees have to do : 
+To submit changes reviewees have to do :
 
-    $ git branch new-branch        #Creates a new branch nammed "new-branch"
-    $ git checkout new-branch   #Switch to "new-branch"
-    # alternatively these two commands can be condensed to "git checkout -b new-branch"
-    $ git add filename
-    $ git commit
-    $ git push origin new-branch
-    $ git checkout master          #Switch back to master
+```sh
+git branch new-branch        #Creates a new branch nammed "new-branch"
+git checkout new-branch   #Switch to "new-branch"
+# alternatively these two commands can be condensed to "git checkout -b new-branch"
+git add filename
+git commit
+git push origin new-branch
+git checkout master          #Switch back to master
+```
 
 Then go on our [GitHub](https://github.com/dataforgoodfr/batch8_worldbank), and simply click on `compare & pull request` and pick a reviewer. Or do
 
@@ -388,5 +394,3 @@ Then go on our [GitHub](https://github.com/dataforgoodfr/batch8_worldbank), and 
 </tr>
 </tbody>
 </table>
-
-
