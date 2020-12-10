@@ -62,7 +62,33 @@
 ## Wireframe
 
 
-<a id="org909a422"></a>
+<a id="org2274fb8"></a>
+
+### Overall structure
+
+
+<a id="orgf38ecd1"></a>
+
+### Structure of a frame
+
+
+<a id="org10ba379"></a>
+
+### Key messages
+
+
+<a id="orgafbf5bf"></a>
+
+#### Key message 7
+
+
+##### Parameter
+
+![img](./Pics/C_5-1_wireframe_7_sector.png "Key message 7 parameters")
+
+
+<a id="org633a48c"></a>
+
 
 # Development
 
