@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>A very short intro to Git and GitHub</title>
+<meta name="author" content="(Morgan Davidson)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="./local.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">A very short intro to Git and GitHub</h1><h2 class="author">Morgan Davidson</h2><p class="date">Created: 2020-12-10 jeu. 21:30</p>
+</section>
+<section>
+<section id="slide-org6e2d61f">
+<h2 id="org6e2d61f"><span class="section-number-2">1</span> Agenda</h2>
+<ol>
+<li>Agenda</li>
+<li>Fast facts</li>
+<li>First steps</li>
+<li>Demo</li>
+<li>References</li>
+
+</ol>
+</section>
+</section>
+<section>
+<section id="slide-orga840bee">
+<h2 id="orga840bee"><span class="section-number-2">2</span> Fast facts</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+</section>
+<section id="slide-orga647aeb">
+<h3 id="orga647aeb"><span class="section-number-3">2.1</span> Git</h3>
+<ul>
+<li>A distributed version-control system for tracking changes in any set of files</li>
+<li>Open source</li>
+<li>Cross plateform</li>
+<li>Created by Linus Torvalds</li>
+<li>in 2005</li>
+<li>By far the most widely used source-code management tool</li>
+
+</ul>
+</section>
+<section id="slide-org2795096">
+<h3 id="org2795096"><span class="section-number-3">2.2</span> GitHub</h3>
+<ul>
+<li>Hosting for software development and version control using Git</li>
+<li>Founded in 2008</li>
+<li>subsidiary of Microsoft since 2018</li>
+<li><p>
+Mascot : Octocat
+</p>
+
+<div class="figure">
+<p><img src="./Pics/octocat.jpg" alt="octocat.jpg" width="300px" />
+</p>
+</div></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org7498bfc">
+<h2 id="org7498bfc"><span class="section-number-2">3</span> Start using Git</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+</section>
+<section id="slide-org7d0352f">
+<h3 id="org7d0352f"><span class="section-number-3">3.1</span> Git install</h3>
+<div class="org-src-container">
+
+<pre  class="src src-sh"><code trim>sudo snap install git-ubuntu --classic
+</code></pre>
+</div>
+</section>
+<section id="slide-org6430e74">
+<h3 id="org6430e74"><span class="section-number-3">3.2</span> Git config</h3>
+<ul>
+<li><p>
+Add your user name:
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-sh"><code trim>git config --global user.name <span style="color: #C1CAFF;">"your_username"</span>
+</code></pre>
+</div></li>
+<li><p>
+and your email address:
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-sh"><code trim>git config --global user.email <span style="color: #C1CAFF;">"your_email_address@example.com"</span>
+</code></pre>
+</div></li>
+
+</ul>
+</section>
+<section id="slide-org19a4c9d">
+<h3 id="org19a4c9d"><span class="section-number-3">3.3</span> Clone a repo</h3>
+<p>
+Pick a folder for all your Git projects, go to that folder and do
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-sh"><code trim>git init
+git clone http://github.com/projectaddress
+</code></pre>
+</div>
+</section>
+<section id="slide-orga085f4d">
+<h3 id="orga085f4d"><span class="section-number-3">3.4</span> Create a GitHub account</h3>
+<ul>
+<li><a href="https://github.com/join">https://github.com/join</a></li>
+
+</ul>
+</section>
+<section id="slide-orgb796d96">
+<h3 id="orgb796d96"><span class="section-number-3">3.5</span> Some Git concepts</h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Concept</th>
+<th scope="col" class="org-left">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Fork</td>
+<td class="org-left">By forking you create a copy of the project into your own namespace</td>
+</tr>
+
+<tr>
+<td class="org-left">Branching</td>
+<td class="org-left">When collaboring in a project with others</td>
+</tr>
+
+<tr>
+<td class="org-left">Pull</td>
+<td class="org-left">Update local repo with the new changes in the remote repo</td>
+</tr>
+
+<tr>
+<td class="org-left">Push</td>
+<td class="org-left">Upload changes from local repo to remote repo</td>
+</tr>
+
+<tr>
+<td class="org-left">Master</td>
+<td class="org-left">Main branch</td>
+</tr>
+
+<tr>
+<td class="org-left">Origin</td>
+<td class="org-left">Remote repository that a project was originally cloned from</td>
+</tr>
+
+<tr>
+<td class="org-left">Chekout</td>
+<td class="org-left">To change Branch</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section>
+<section id="slide-orgc6c9d58">
+<h2 id="orgc6c9d58"><span class="section-number-2">4</span> Demo</h2>
+<ul>
+<li>push</li>
+<li>pull request</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org55c5452">
+<h2 id="org55c5452"><span class="section-number-2">5</span> References</h2>
+<ul>
+<li><a href="https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html">GitLab &gt; Start using Git on the command line</a></li>
+<li><a href="https://rogerdudler.github.io/git-guide/">Roger Dudler &gt; git the simple guide</a></li>
+<li><a href="https://training.github.com/downloads/github-git-cheat-sheet.pdf">GitHub &gt; Git Cheat Sheet</a></li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+width:1800, height:1000, margin: 0.1, minScale:0.2, maxScale:2.5, transition:'cube',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
