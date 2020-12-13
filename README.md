@@ -1,73 +1,110 @@
 
 # Table of Contents
 
-1.  [Dataset](#org0d21a5d)
-    1.  [Variables](#org7feb939)
-    2.  [Data sources](#orgf83378e)
-2.  [Prototyping](#org39f0f68)
-    1.  [Features](#org850f2ea)
-    2.  [Wireframe](#org00cb457)
-3.  [Development](#org909a422)
-    1.  [Why did we pick Dash?](#org274dca1)
-    2.  [Architecture](#orgbfbe61b)
-        1.  [Structure of `app.py`](#org3834c0b)
-            -   [Globals](#org1a561f9)
-            -   [Layout](#orgc060127)
-            -   [Callbacks functions](#org084a2c5)
-    3.  [Visual identity guidelines](#orgc6f66d4)
-        1.  [Colors](#orgb4c6f8a)
-            -   [Primary colors](#org2a17b83)
-            -   [Secondary colors](#org32f3529)
-        2.  [Fonts](#orgb2a2e6d)
-            -   [Primary fonts](#orgd254b8f)
-            -   [Secondary fonts](#org02fe1e6)
-        3.  [Logo](#orge02fe30)
-            -   [Symbol](#org12fabfa)
-            -   [Logotype](#org697a356)
-    4.  [How to contribute](#orgd249d81)
-        1.  [Setting up a new Git repository](#org72c565e)
-        2.  [Adding or modifying owned files (`push`)](#org8f4a35d)
-        3.  [Submit proposed changes to review (`pull-request`)](#orgcc58583)
-4.  [Tools that we used](#orgc53a177)
+1.  [Dataset](#org9262c2c)
+    1.  [Variables](#orgcc78622)
+    2.  [Data sources](#orgbb13f8b)
+2.  [Prototyping](#org9e436b5)
+    1.  [Features](#orge688870)
+    2.  [Wireframe](#org44c6c11)
+        1.  [Overall structure](#org8f05c65)
+        2.  [Structure of a frame](#org6d34140)
+        3.  [key messages](#orga2abddc)
+            -   [Key message 1](#org9d75b89)
+            -   [Key message 7](#org298479c)
+3.  [Development](#orgb9ab69e)
+    1.  [Why did we pick Dash?](#org04158d8)
+    2.  [Architecture](#org570b6d1)
+        1.  [Structure of `app.py`](#orgdf86516)
+            -   [Globals](#org2fe95d3)
+            -   [Layout](#org4f9b46e)
+            -   [Callbacks functions](#orge1302ae)
+    3.  [Visual identity guidelines](#org64d3203)
+        1.  [Colors](#org3af8278)
+            -   [Primary colors](#orgf977e62)
+            -   [Secondary colors](#orgd047554)
+        2.  [Fonts](#orgb23f67d)
+            -   [Primary fonts](#org372965e)
+            -   [Secondary fonts](#org863ae3f)
+        3.  [Logo](#org81615b4)
+            -   [Symbol](#org05e239e)
+            -   [Logotype](#org86a6aa4)
+    4.  [How to contribute](#org5d86f6f)
+        1.  [Setting up a new Git repository](#orgab97f84)
+        2.  [Adding or modifying owned files (`push`)](#org709e059)
+        3.  [Update local repo with the new changes in the remote repo](#orgbd8293f)
+        4.  [Submit proposed changes to review (`pull-request`)](#org48d6fe7)
+4.  [Tools that we used](#org5d0ec76)
 
 
 
-<a id="org0d21a5d"></a>
+<a id="org9262c2c"></a>
 
 # Dataset
 
 
-<a id="org7feb939"></a>
+<a id="orgcc78622"></a>
 
 ## Variables
 
 
-<a id="orgf83378e"></a>
+<a id="orgbb13f8b"></a>
 
 ## Data sources
 
 
-<a id="org39f0f68"></a>
+<a id="org9e436b5"></a>
 
 # Prototyping
 
 
-<a id="org850f2ea"></a>
+<a id="orge688870"></a>
 
 ## Features
 
 
-<a id="org00cb457"></a>
+<a id="org44c6c11"></a>
 
 ## Wireframe
 
 
-<a id="org909a422"></a>
+<a id="org8f05c65"></a>
+
+### Overall structure
+
+
+<a id="org6d34140"></a>
+
+### Structure of a frame
+
+![img](./Pics/framestructure.png "Frame structure")
+
+
+<a id="orga2abddc"></a>
+
+### key messages
+
+
+<a id="org9d75b89"></a>
+
+#### Key message 1
+
+![img](./Pics/topic1.png "Key message 1")
+
+
+<a id="org298479c"></a>
+
+#### Key message 7
+
+![img](./Pics/topic7.png "Key message 7")
+
+
+<a id="orgb9ab69e"></a>
 
 # Development
 
 
-<a id="org274dca1"></a>
+<a id="org04158d8"></a>
 
 ## Why did we pick [Dash](https://plotly.com/dash/)?
 
@@ -139,17 +176,17 @@ According to following benchmarck the team decided to develop the PoC with ****D
 ****Adaptability****: Based on how flexible and opinionated the library is.
 
 
-<a id="orgbfbe61b"></a>
+<a id="org570b6d1"></a>
 
 ## Architecture
 
 
-<a id="org3834c0b"></a>
+<a id="orgdf86516"></a>
 
 ### Structure of `app.py`
 
 
-<a id="org1a561f9"></a>
+<a id="org2fe95d3"></a>
 
 #### Globals
 
@@ -169,100 +206,103 @@ According to following benchmarck the team decided to develop the PoC with ****D
 ##### Global functions
 
 
-<a id="orgc060127"></a>
+<a id="org4f9b46e"></a>
 
 #### Layout
 
 
-<a id="org084a2c5"></a>
+<a id="orge1302ae"></a>
 
 #### Callbacks functions
 
 
-<a id="orgc6f66d4"></a>
+<a id="org64d3203"></a>
 
 ## Visual identity guidelines
 
 
-<a id="orgb4c6f8a"></a>
+<a id="org3af8278"></a>
 
 ### Colors
 
 
-<a id="org2a17b83"></a>
+<a id="orgf977e62"></a>
 
 #### Primary colors
 
 
-<a id="org32f3529"></a>
+<a id="orgd047554"></a>
 
 #### Secondary colors
 
 
-<a id="orgb2a2e6d"></a>
+<a id="orgb23f67d"></a>
 
 ### Fonts
 
 
-<a id="orgd254b8f"></a>
+<a id="org372965e"></a>
 
 #### Primary fonts
 
 
-<a id="org02fe1e6"></a>
+<a id="org863ae3f"></a>
 
 #### Secondary fonts
 
 
-<a id="orge02fe30"></a>
+<a id="org81615b4"></a>
 
 ### Logo
 
 
-<a id="org12fabfa"></a>
+<a id="org05e239e"></a>
 
 #### Symbol
 
 
-<a id="org697a356"></a>
+<a id="org86a6aa4"></a>
 
 #### Logotype
 
 
-<a id="orgd249d81"></a>
+<a id="org5d86f6f"></a>
 
 ## How to contribute
 
 
-<a id="org72c565e"></a>
+<a id="orgab97f84"></a>
 
 ### Setting up a new Git repository
 
 -   Clone project locally
-
-```sh
-git init
-git clone https://github.com/dataforgoodfr/batch8_carbon4/tree/master/plateforme
-```
+    
+        $ git init
+        $ git clone https://github.com/dataforgoodfr/batch8_carbon4/tree/master/plateforme
 -   Ask to join our GitHub
 
 
-<a id="org8f4a35d"></a>
+<a id="org709e059"></a>
 
 ### Adding or modifying owned files (`push`)
 
 When adding a new file or modifying a file that you own, do:
 
-```sh
-git add filename
-git commit
-git push
-```
+    $ git add filename
+    $ git commit
+    $ git push
 
 Where `filename` is the name of the file
 
 
-<a id="orgcc58583"></a>
+<a id="orgbd8293f"></a>
+
+### Update local repo with the new changes in the remote repo
+
+    $ git pull
+
+
+<a id="org48d6fe7"></a>
 
 ### Submit proposed changes to review (`pull-request`)
 
@@ -286,13 +326,7 @@ When modifying an existing file, if you're not its owner, you have to submit the
 <tbody>
 <tr>
 <td class="org-left">linetonthat</td>
-<td class="org-left">??</td>
-</tr>
-
-
-<tr>
-<td class="org-left">j-back</td>
-<td class="org-left">??</td>
+<td class="org-left">`./data/*`</td>
 </tr>
 
 
@@ -300,20 +334,24 @@ When modifying an existing file, if you're not its owner, you have to submit the
 <td class="org-left">morgandavidson</td>
 <td class="org-left">`README.md`</td>
 </tr>
+
+
+<tr>
+<td class="org-left">sebastienbourgeois</td>
+<td class="org-left">`app.py`</td>
+</tr>
 </tbody>
 </table>
 
-To submit changes reviewees have to do :
+To submit changes reviewees have to do : 
 
-```sh
-git branch new-branch        #Creates a new branch nammed "new-branch"
-git checkout new-branch   #Switch to "new-branch"
-# alternatively these two commands can be condensed to "git checkout -b new-branch"
-git add filename
-git commit
-git push origin new-branch
-git checkout master          #Switch back to master
-```
+    $ git branch new-branch        #Creates a new branch nammed "new-branch"
+    $ git checkout new-branch      #Switch to "new-branch"
+    # alternatively these two commands can be condensed to "git checkout -b new-branch"
+    $ git add filename
+    $ git commit
+    $ git push origin new-branch
+    $ git checkout master          #Switch back to master
 
 Then go on our [GitHub](https://github.com/dataforgoodfr/batch8_worldbank), and simply click on `compare & pull request` and pick a reviewer. Or do
 
@@ -326,7 +364,7 @@ Then go on our [GitHub](https://github.com/dataforgoodfr/batch8_worldbank), and 
 -   click on `create pull request`
 
 
-<a id="orgc53a177"></a>
+<a id="org5d0ec76"></a>
 
 # Tools that we used
 
@@ -394,3 +432,4 @@ Then go on our [GitHub](https://github.com/dataforgoodfr/batch8_worldbank), and 
 </tr>
 </tbody>
 </table>
+
