@@ -26,6 +26,7 @@ x_labels = {"GICS4": "Secteur d'activité",
 
 # Dictionnaire stockant les noms de variable pour les ordonnées
 y_labels = {"nombre_entreprises": "Nombre d'entreprises",
+                #"total_induced": "Émissions induites totales",
                 #"capitalisation_boursiere_2019": "Capitalisation boursière (M€)",
                 #"CA_2019": "Chiffre d'affaires (M€)",
                 #"volume_total_gere": "Volume géré (toe)"
@@ -57,6 +58,12 @@ controls = dbc.Card(
                     ],
                     value="nombre_entreprises"
                 ),
+            ]
+        ),
+        dbc.FormGroup(
+            [
+                dbc.Label("Choix de l'affichage de Y"),
+                dbc.RadioItems(id="choix-affichage-y", value="somme")
             ]
         ),
     ],
@@ -122,33 +129,66 @@ app.layout = dbc.Container([
 )
 
 @app.callback(
+    Output("choix-affichage-y", "options"),
+    Input("y-variable", "value")
+)
+def modifier_options_radio(nom_variable_y):
+    if nom_variable_y != "nombre_entreprises":
+        return [{"label": "Somme", "value": "somme"}, {"label": "Log", "value": "log"}]
+    else:
+        return [{"label": "Indisponible", "value": "indisponible", "disabled": True}]
+
+
+@app.callback(
     Output("data-viz", "figure"),
     [
         Input("x-variable", "value"),
         Input("y-variable", "value"),
+        Input("choix-affichage-y", "value"),
     ],
 )
-def make_graph(nom_variable_x, nom_variable_y):
+def make_graph(nom_variable_x, nom_variable_y, choix_affichage_y):
 
-    if nom_variable_y != "nombre_entreprises":
-        fig = px.box(echantillon_df, x=nom_variable_x, y=nom_variable_y, labels={nom_variable_x: x_labels[nom_variable_x], nom_variable_y: y_labels[nom_variable_y]})
-    else:
+    if nom_variable_y == "nombre_entreprises":
 
-        # Préparation données pour la visualisation du secteur d'activité
+        # Nombre d'entreprises selon la variable sélectionnée en X
         gb = echantillon_df.groupby(nom_variable_x)
         table = gb["Company_Name"].count()
 
+        # Mise en forme de la table précédente pour un bel affichage sur la visualisation
         table_finale = pd.concat([table], axis=1)
-        table_finale.columns = [y_labels[nom_variable_y]]
-        table_finale.index.name = x_labels[nom_variable_x]
+        table_finale.columns = [y_labels[nom_variable_y]] # on renomme le nom de la colonne (le nombre d'entreprises) par son label
+        table_finale.index.name = x_labels[nom_variable_x] # de même pour l'index (la variable X sélectionnée)
         table_finale.sort_values(by=x_labels[nom_variable_x], ascending=True, inplace=True)
 
         fig = px.bar(table_finale, y=y_labels[nom_variable_y], text=y_labels[nom_variable_y], height=550)
 
         fig.update_traces(textposition='outside')
 
-    return fig
+    elif choix_affichage_y == "somme":
 
+        # Somme de la variable sélectionnée en Y selon la variable sélectionnée en X
+        gb = echantillon_df.groupby(nom_variable_x)
+        table = gb[nom_variable_y].sum()
+
+        # Mise en forme de la table précédente pour un bel affichage sur la visualisation
+        table_finale = pd.concat([table], axis=1)
+        table_finale.columns = [y_labels[nom_variable_y]] # on renomme le nom de la colonne (le nombre d'entreprises) par son label
+        table_finale[y_labels[nom_variable_y]] = table_finale[y_labels[nom_variable_y]].apply(round)
+        table_finale.index.name = x_labels[nom_variable_x] # de même pour l'index (la variable X sélectionnée)
+        table_finale.sort_values(by=x_labels[nom_variable_x], ascending=True, inplace=True)
+
+        fig = px.bar(table_finale, y=y_labels[nom_variable_y], text=y_labels[nom_variable_y], height=550)
+
+        fig.update_traces(textposition='outside')
+
+    else:
+
+        fig = px.box(echantillon_df, x=nom_variable_x, y=nom_variable_y, 
+                    labels={nom_variable_x: x_labels[nom_variable_x], nom_variable_y: y_labels[nom_variable_y]},
+                    log_y=True)
+
+    return fig
 
 
 if __name__ == '__main__':
