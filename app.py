@@ -16,7 +16,7 @@ from dash.dependencies import Input, Output
 echantillon_df = pd.read_csv("data/C4_OandG.csv") 
 
 # Dictionnaire stockant les noms de variable pour les abscisses
-x_variables = {"GICS4": "Secteur d'activité",
+x_labels = {"GICS4": "Secteur d'activité",
                 "HQ_SubRegion_ord": "Localisation",
                 "gas_class": "Part du gaz dans le mix",
                 "marketCap_class": "Capitalisation boursière (M€)",
@@ -25,7 +25,7 @@ x_variables = {"GICS4": "Secteur d'activité",
                 }
 
 # Dictionnaire stockant les noms de variable pour les ordonnées
-y_variables = {"nombre_entreprises": "Nombre d'entreprises",
+y_labels = {"nombre_entreprises": "Nombre d'entreprises",
                 #"capitalisation_boursiere_2019": "Capitalisation boursière (M€)",
                 #"CA_2019": "Chiffre d'affaires (M€)",
                 #"volume_total_gere": "Volume géré (toe)"
@@ -41,7 +41,7 @@ controls = dbc.Card(
                 dcc.Dropdown(
                     id="x-variable",
                     options=[
-                        {"label": x_variables[variable], "value": variable} for variable in x_variables
+                        {"label": x_labels[nom_variable], "value": nom_variable} for nom_variable in x_labels
                     ],
                     value="GICS4"
                 ),
@@ -53,7 +53,7 @@ controls = dbc.Card(
                 dcc.Dropdown(
                     id="y-variable",
                     options=[
-                       {"label": y_variables[variable], "value": variable} for variable in y_variables
+                       {"label": y_labels[nom_variable], "value": nom_variable} for nom_variable in y_labels
                     ],
                     value="nombre_entreprises"
                 ),
@@ -73,36 +73,39 @@ app.layout = dbc.Container([
             [
                 dbc.Col([
                     html.Div("Entreprises"),
-                    html.H1("96"),
+                    html.H3("96"),
                 ]),
                 dbc.Col([
                     html.Div("Analyse sur"),
-                    html.H1("2019"),
+                    html.H3("2019"),
                 ]),
                 dbc.Col([
                     html.Div("Émissions induites"),
-                    html.H1("34%"),
+                    html.H3("34%"),
                     html.Div("des émissions mondiales"),
+                    html.Div("(= 33,5 Gt CO2)"),
                 ]),
                 dbc.Col([
                     html.Br(),
-                    html.H1("61%"),
-                    html.Div("des émissions mondiales liées au pétrole et au gaz"),
+                    html.H3("61%"),
+                    html.Div("des émissions mondiales liées au pétrole et au gaz (= 18,5 Gt CO2)"),
                 ]),
                 dbc.Col([
                     html.Div("Volume total géré"),
-                    html.H1("41%"),
-                    html.Div("du volume mondial fourni de pétrole et de gaz"),
+                    html.H3("41%"),
+                    html.Div("du volume mondial fourni de pétrole et de gaz (= 7,8 Gtoe)"),
                 ]),
                 dbc.Col([
                     html.Div("Market cap"),
-                    html.H1("78%"),
+                    html.H3("78%"),
                     html.Div("du secteur"),
+                    html.Div("(= 5,2 KMds€)"),
                 ]),
                 dbc.Col([
                     html.Div("CA"),
-                    html.H1("60%"),
+                    html.H3("60%"),
                     html.Div("du secteur"),
+                    html.Div("(= 5,3 KMds€)"),
                 ]),
             ]
         ),
@@ -125,22 +128,22 @@ app.layout = dbc.Container([
         Input("y-variable", "value"),
     ],
 )
-def make_graph(x, y):
+def make_graph(nom_variable_x, nom_variable_y):
 
-    if y != "nombre_entreprises":
-        fig = px.box(echantillon_df, x=x, y=y, labels={x: x_variables[x], y: y_variables[y]})
+    if nom_variable_y != "nombre_entreprises":
+        fig = px.box(echantillon_df, x=nom_variable_x, y=nom_variable_y, labels={nom_variable_x: x_labels[nom_variable_x], nom_variable_y: y_labels[nom_variable_y]})
     else:
 
         # Préparation données pour la visualisation du secteur d'activité
-        gb = echantillon_df.groupby(x)
+        gb = echantillon_df.groupby(nom_variable_x)
         table = gb["Company_Name"].count()
 
         table_finale = pd.concat([table], axis=1)
-        table_finale.columns = [y_variables[y]]
-        table_finale.index.name = x_variables[x]
-        table_finale.sort_values(by=x_variables[x], ascending=True, inplace=True)
+        table_finale.columns = [y_labels[nom_variable_y]]
+        table_finale.index.name = x_labels[nom_variable_x]
+        table_finale.sort_values(by=x_labels[nom_variable_x], ascending=True, inplace=True)
 
-        fig = px.bar(table_finale, y=y_variables[y], text=y_variables[y])
+        fig = px.bar(table_finale, y=y_labels[nom_variable_y], text=y_labels[nom_variable_y], height=550)
 
         fig.update_traces(textposition='outside')
 
