@@ -16,16 +16,16 @@ from dash.dependencies import Input, Output
 echantillon_df = pd.read_csv("data/C4_OandG.csv") 
 
 # Dictionnaire stockant les noms de variable pour les abscisses
-x_labels = {"GICS4": "Secteur d'activité",
-                "HQ_SubRegion_ord": "Localisation",
-                "gas_class": "Part du gaz dans le mix",
-                "marketCap_class": "Capitalisation boursière (M€)",
-                "vol_class": "Volume géré (toe)",
+x_labels = {"GICS4": "Sector",
+                "HQ_SubRegion_ord": "Location",
+                "gas_class": "Gas share in the mix",
+                "marketCap_class": "Market cap (M€)",
+                "vol_class": "Managed volume (toe)",
                 #"cat_CA_2019": "Chiffre d'affaires (M€)"
                 }
 
 # Dictionnaire stockant les noms de variable pour les ordonnées
-y_labels = {"nombre_entreprises": "Nombre d'entreprises",
+y_labels = {"nombre_entreprises": "Number of companies",
                 #"total_induced": "Émissions induites totales",
                 #"capitalisation_boursiere_2019": "Capitalisation boursière (M€)",
                 #"CA_2019": "Chiffre d'affaires (M€)",
@@ -62,7 +62,7 @@ controls = dbc.Card(
         ),
         dbc.FormGroup(
             [
-                dbc.Label("Choix de l'affichage de Y"),
+                dbc.Label("Choose the Y display"),
                 dbc.RadioItems(id="choix-affichage-y", value="somme")
             ]
         ),
@@ -73,46 +73,46 @@ controls = dbc.Card(
 app.layout = dbc.Container([
 
         dbc.Row(
-            dbc.Col(html.H2('Entreprises du secteur "Oil & Gas" analysées par Carbone4Finance'))
+            dbc.Col(html.H2('Sector "Oil & Gas" companies analysed by Carbon4Finance'))
         ),
         html.Hr(),
         dbc.Row(
             [
                 dbc.Col([
-                    html.Div("Entreprises"),
+                    html.Div("Companies"),
                     html.H3("96"),
                 ]),
                 dbc.Col([
-                    html.Div("Analyse sur"),
+                    html.Div("Analysed in"),
                     html.H3("2019"),
                 ]),
                 dbc.Col([
-                    html.Div("Émissions induites"),
+                    html.Div("Induced emissions"),
                     html.H3("34%"),
-                    html.Div("des émissions mondiales"),
+                    html.Div("of global emissions"),
                     html.Div("(= 33,5 Gt CO2)"),
                 ]),
                 dbc.Col([
                     html.Br(),
                     html.H3("61%"),
-                    html.Div("des émissions mondiales liées au pétrole et au gaz (= 18,5 Gt CO2)"),
+                    html.Div("of global emissions due to oil and gas (= 18,5 Gt CO2)"),
                 ]),
                 dbc.Col([
-                    html.Div("Volume total géré"),
+                    html.Div("Managed total volume"),
                     html.H3("41%"),
-                    html.Div("du volume mondial fourni de pétrole et de gaz (= 7,8 Gtoe)"),
+                    html.Div("of oil and gas global volume (= 7,8 Gtoe)"),
                 ]),
                 dbc.Col([
                     html.Div("Market cap"),
                     html.H3("78%"),
-                    html.Div("du secteur"),
-                    html.Div("(= 5,2 KMds€)"),
+                    html.Div("of the sector"),
+                    html.Div("(= 5,2 KB€)"),
                 ]),
                 dbc.Col([
-                    html.Div("CA"),
+                    html.Div("Revenue"),
                     html.H3("60%"),
-                    html.Div("du secteur"),
-                    html.Div("(= 5,3 KMds€)"),
+                    html.Div("of the sector"),
+                    html.Div("(= 5,3 KB€)"),
                 ]),
             ]
         ),
@@ -134,9 +134,9 @@ app.layout = dbc.Container([
 )
 def modifier_options_radio(nom_variable_y):
     if nom_variable_y != "nombre_entreprises":
-        return [{"label": "Somme", "value": "somme"}, {"label": "Log", "value": "log"}]
+        return [{"label": "Sum", "value": "somme"}, {"label": "Log", "value": "log"}]
     else:
-        return [{"label": "Indisponible", "value": "indisponible", "disabled": True}]
+        return [{"label": "Unavailable", "value": "indisponible", "disabled": True}]
 
 
 @app.callback(
