@@ -183,7 +183,10 @@ def make_graph(nom_variable_x, nom_variable_y, choix_affichage_y):
 
     else:
 
-        fig = px.box(echantillon_df, x=nom_variable_x, y=nom_variable_y, 
+        # Tri du dataframe par la colonne qui a été sélectionnée pour ensuite afficher dans l'ordre voulu sur le graphe
+        echantillon_trie_df = echantillon_df.sort_values(by=nom_variable_x)
+
+        fig = px.box(echantillon_trie_df, x=nom_variable_x, y=nom_variable_y, 
                     labels={nom_variable_x: x_labels[nom_variable_x], nom_variable_y: y_labels[nom_variable_y]},
                     log_y=True)
 
