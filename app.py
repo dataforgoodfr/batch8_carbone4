@@ -77,41 +77,32 @@ app.layout = dbc.Container([
         dbc.Row(
             [
                 dbc.Col([
-                    html.Div("Number of companies"),
                     html.H3("96"),
+                    html.Div("Number of companies"),
                 ]),
                 dbc.Col([
-                    html.Div("Data from"),
                     html.H3("2019"),
-                    html.Div("reporting year"),
+                    html.Div("Data from that reporting year"),
                 ]),
                 dbc.Col([
-                    html.Div("Total induced emissions represents"),
                     html.H3("34%"),
-                    html.Div("of global emissions"),
-                    html.Div("(= 33,5 Gt CO2)"),
+                    html.Div("of the global emissions (33,5 Gt CO2) were produced by these companies"),
                 ]),
                 dbc.Col([
-                    html.Div("and"),
                     html.H3("61%"),
-                    html.Div("of global emissions due to oil and gas (= 18,5 Gt CO2)"),
+                    html.Div("of the global emissions due to oil and gas (18,5 Gt CO2) were produced by these companies"),
                 ]),
                 dbc.Col([
-                    html.Div("Managed total volume represents"),
                     html.H3("41%"),
-                    html.Div("of oil and gas global volume (= 7,8 Gtoe)"),
+                    html.Div("of oil and gas global volume (7,8 Gtoe) were managed by these companies"),
                 ]),
                 dbc.Col([
-                    html.Div("Market capitalisation represents"),
                     html.H3("78%"),
-                    html.Div("of the sector"),
-                    html.Div("(= 5,2 KB€)"),
+                    html.Div("of the sector market capitalisation (5,2 KB€) were owned by these companies"),
                 ]),
                 dbc.Col([
-                    html.Div("Total revenue represents"),
                     html.H3("60%"),
-                    html.Div("of the sector"),
-                    html.Div("(= 5,3 KB€)"),
+                    html.Div("of the sector total revenue (5,3 KB€) were made by these companies"),
                 ]),
             ]
         ),
