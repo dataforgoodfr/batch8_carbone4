@@ -19,18 +19,16 @@ echantillon_df = pd.read_csv("data/C4_OandG.csv")
 x_labels = {"GICS4": "Sector",
                 "HQ_SubRegion_ord": "Location",
                 "gas_class": "Gas share in the mix",
-                "marketCap_class": "Market cap (M€)",
-                "vol_class": "Managed volume (toe)",
-                #"cat_CA_2019": "Chiffre d'affaires (M€)"
-                }
+                "marketCap_class": "Categorised market capitalisation (M€)"
+            }
 
 # Dictionnaire stockant les noms de variable pour les ordonnées
-y_labels = {"nombre_entreprises": "Number of companies",
-                #"total_induced": "Émissions induites totales",
-                #"capitalisation_boursiere_2019": "Capitalisation boursière (M€)",
-                #"CA_2019": "Chiffre d'affaires (M€)",
-                #"volume_total_gere": "Volume géré (toe)"
-                }
+y_labels = {"nombre_entreprises": "Number of companies", 
+                #"emissions_totales_induites": "Total induced emisions (teqCO2)",
+                #"capitalisation_boursiere_2019": "Market capitalisation (M€)",
+                #"CA_2019": "Revenue (M€)",
+                #"volume_total_gere": "Managed volume (toe)"
+            }
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -73,46 +71,38 @@ controls = dbc.Card(
 app.layout = dbc.Container([
 
         dbc.Row(
-            dbc.Col(html.H2('Sector "Oil & Gas" companies analysed by Carbon4Finance'))
+            dbc.Col(html.H2('In 2020, Carbon4Finance has rated a set of listed and unlisted Oil & Gas companies. Here are some features:'))
         ),
         html.Hr(),
         dbc.Row(
             [
                 dbc.Col([
-                    html.Div("Companies"),
                     html.H3("96"),
+                    html.Div("Number of companies"),
                 ]),
                 dbc.Col([
-                    html.Div("Analysed in"),
                     html.H3("2019"),
+                    html.Div("Data from that reporting year"),
                 ]),
                 dbc.Col([
-                    html.Div("Induced emissions"),
                     html.H3("34%"),
-                    html.Div("of global emissions"),
-                    html.Div("(= 33,5 Gt CO2)"),
+                    html.Div("of the global emissions (33,5 Gt CO2) were produced by these companies"),
                 ]),
                 dbc.Col([
-                    html.Br(),
                     html.H3("61%"),
-                    html.Div("of global emissions due to oil and gas (= 18,5 Gt CO2)"),
+                    html.Div("of the global emissions due to oil and gas (18,5 Gt CO2) were produced by these companies"),
                 ]),
                 dbc.Col([
-                    html.Div("Managed total volume"),
                     html.H3("41%"),
-                    html.Div("of oil and gas global volume (= 7,8 Gtoe)"),
+                    html.Div("of oil and gas global volume (7,8 Gtoe) were managed by these companies"),
                 ]),
                 dbc.Col([
-                    html.Div("Market cap"),
                     html.H3("78%"),
-                    html.Div("of the sector"),
-                    html.Div("(= 5,2 KB€)"),
+                    html.Div("of the sector market capitalisation (5,2 KB€) were owned by these companies"),
                 ]),
                 dbc.Col([
-                    html.Div("Revenue"),
                     html.H3("60%"),
-                    html.Div("of the sector"),
-                    html.Div("(= 5,3 KB€)"),
+                    html.Div("of the sector total revenue (5,3 KB€) were made by these companies"),
                 ]),
             ]
         ),
@@ -153,7 +143,7 @@ def make_graph(nom_variable_x, nom_variable_y, choix_affichage_y):
 
         # Nombre d'entreprises selon la variable sélectionnée en X
         gb = echantillon_df.groupby(nom_variable_x)
-        table = gb["Company_Name"].count()
+        table = gb["Company"].count()
 
         # Mise en forme de la table précédente pour un bel affichage sur la visualisation
         table_finale = pd.concat([table], axis=1)
@@ -184,7 +174,10 @@ def make_graph(nom_variable_x, nom_variable_y, choix_affichage_y):
 
     else:
 
-        fig = px.box(echantillon_df, x=nom_variable_x, y=nom_variable_y, 
+        # Tri du dataframe par la colonne qui a été sélectionnée pour ensuite afficher dans l'ordre voulu sur le graphe
+        echantillon_trie_df = echantillon_df.sort_values(by=nom_variable_x)
+
+        fig = px.box(echantillon_trie_df, x=nom_variable_x, y=nom_variable_y, 
                     labels={nom_variable_x: x_labels[nom_variable_x], nom_variable_y: y_labels[nom_variable_y]},
                     log_y=True)
 
