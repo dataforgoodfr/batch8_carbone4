@@ -9,25 +9,76 @@ import dash_core_components as dcc
 import dash_html_components as html
 import plotly.express as px
 import pandas as pd
+import collections
 from dash.dependencies import Input, Output
 #import fonctions as fn
 
 # Chargement des données
-echantillon_df = pd.read_csv("data/C4_OandG.csv") 
+echantillon_df = pd.read_csv("data/C4_OandG_v6.csv")
+
+# Describe the order in each category
+category_items = {
+	"GICS4": [
+        'Oil & Gas Exploration & Production',
+        'Oil & Gas Refining & Marketing',
+	    'Oil & Gas Storage & Transportation',
+        'Gas Utilities',
+        'Integrated Oil & Gas',
+	],
+	"HQ_SubRegion_ord":[
+		'Northern America',
+		'Latin America',
+		'Northern Europe',
+		'Western Europe',
+		'Southern Europe',
+		'Eastern Europe',
+		'Western Asia',
+		'Southern Asia',
+		'Southeastern Asia',
+		'Eastern Asia',
+		'Western Africa',
+		'Middle Africa',
+		'Melanesia',
+		'Australasia',
+	],
+	"marketCap_class":[
+		'Company not quoted',
+	    '0 MEUR < market cap < 1,000 MEUR',
+		'1,000 MEUR<= market cap < 10,000 MEUR',
+	    '10,000 MEUR<= market cap < 100,000 MEUR',
+	    'Market cap >= 100,000 MEUR'
+	],
+    "vol_class":[
+    '0 Mtoe <= Volume managed < 5 Mtoe',
+    '5 Mtoe <= Volume managed < 10 Mtoe',
+    '10 Mtoe <= Volume managed < 27 Mtoe',
+    'Volume managed >= 27 Mtoe'
+    ],
+    "gas_class":[
+	'No gas',
+	'0%<gas in the mix<33%',
+	'33%<=gas in the mix<67%',
+    '67%<=gas in the mix<100%',
+    'Only gas',
+	 ],
+}
+
 
 # Dictionnaire stockant les noms de variable pour les abscisses
 x_labels = {"GICS4": "Sector",
                 "HQ_SubRegion_ord": "Location",
                 "gas_class": "Gas share in the mix",
-                "marketCap_class": "Categorised market capitalisation (M€)"
-            }
+                "marketCap_class": "Market cap (M€)",
+                "vol_class": "Managed volume (toe)",
+                #"cat_CA_2019": "Chiffre d'affaires (M€)"
+                }
 
 # Dictionnaire stockant les noms de variable pour les ordonnées
-y_labels = {"nombre_entreprises": "Number of companies", 
-                #"emissions_totales_induites": "Total induced emisions (teqCO2)",
-                #"capitalisation_boursiere_2019": "Market capitalisation (M€)",
-                #"CA_2019": "Revenue (M€)",
-                #"volume_total_gere": "Managed volume (toe)"
+y_labels = {"nombre_entreprises": "Count of companies",
+            "total_induced": "Total induced emisions (teqCO2)",
+            "Market_cap": "Market capitalisation (M€)",
+            "revenues_mEUR_2019": "Revenue (M€)",
+            "vol": "Managed volume (toe)"
             }
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
@@ -36,7 +87,7 @@ controls = dbc.Card(
     [
         dbc.FormGroup(
             [
-                dbc.Label("X variable"),
+                dbc.Label("Select a category"),
                 dcc.Dropdown(
                     id="x-variable",
                     options=[
@@ -48,7 +99,7 @@ controls = dbc.Card(
         ),
         dbc.FormGroup(
             [
-                dbc.Label("Y variable"),
+                dbc.Label("Select a variable"),
                 dcc.Dropdown(
                     id="y-variable",
                     options=[
@@ -68,12 +119,16 @@ controls = dbc.Card(
     body=True,
 )
 
+
 app.layout = dbc.Container([
 
         dbc.Row(
-            dbc.Col(html.H2('In 2020, Carbon4Finance has rated a set of listed and unlisted Oil & Gas companies. Here are some features:'))
+            dbc.Col(html.H2('Our analyses are based on a representative sample of companies from the Oil & Gas (O&G) sector.'))
         ),
         html.Hr(),
+        #dbc.Row(
+        #    dbc.Col(html.H4('Percentages below represent the share of our sample on the global O&G sector.'))
+        #),
         dbc.Row(
             [
                 dbc.Col([
@@ -82,27 +137,27 @@ app.layout = dbc.Container([
                 ]),
                 dbc.Col([
                     html.H3("2019"),
-                    html.Div("Data from that reporting year"),
+                    html.Div("Reporting year"),
                 ]),
                 dbc.Col([
                     html.H3("34%"),
-                    html.Div("of the global emissions (33,5 Gt CO2) were produced by these companies"),
+                    html.Div("of the worldwide CO2 emissions (33.5 BT)"),
                 ]),
                 dbc.Col([
                     html.H3("61%"),
-                    html.Div("of the global emissions due to oil and gas (18,5 Gt CO2) were produced by these companies"),
+                    html.Div("of the CO2 emissions from the sector (18.5 BT)"),
                 ]),
                 dbc.Col([
                     html.H3("41%"),
-                    html.Div("of oil and gas global volume (7,8 Gtoe) were managed by these companies"),
+                    html.Div("of the volume managed by the sector (7.8 BT)"),
                 ]),
                 dbc.Col([
                     html.H3("78%"),
-                    html.Div("of the sector market capitalisation (5,2 KB€) were owned by these companies"),
+                    html.Div("of the sector market capitalisation (5,200 B€)"),
                 ]),
                 dbc.Col([
                     html.H3("60%"),
-                    html.Div("of the sector total revenue (5,3 KB€) were made by these companies"),
+                    html.Div("of the sector total revenue (5,300 B€)"),
                 ]),
             ]
         ),
@@ -124,9 +179,9 @@ app.layout = dbc.Container([
 )
 def modifier_options_radio(nom_variable_y):
     if nom_variable_y != "nombre_entreprises":
-        return [{"label": "Sum", "value": "somme"}, {"label": "Log", "value": "log"}]
+        return [{"label": "Count", "value": "somme"}, {"label": "Summary statistics", "value": "stats"}]
     else:
-        return [{"label": "Unavailable", "value": "indisponible", "disabled": True}]
+        return [{"label": "Not applicable", "value": "indisponible", "disabled": True}]
 
 
 @app.callback(
@@ -151,7 +206,9 @@ def make_graph(nom_variable_x, nom_variable_y, choix_affichage_y):
         table_finale.index.name = x_labels[nom_variable_x] # de même pour l'index (la variable X sélectionnée)
         table_finale.sort_values(by=x_labels[nom_variable_x], ascending=True, inplace=True)
 
-        fig = px.bar(table_finale, y=y_labels[nom_variable_y], text=y_labels[nom_variable_y], height=550)
+        fig = px.bar(table_finale, y=y_labels[nom_variable_y],
+        #text=y_labels[nom_variable_y], 
+        height=550)
 
         fig.update_traces(textposition='outside')
 
@@ -168,16 +225,15 @@ def make_graph(nom_variable_x, nom_variable_y, choix_affichage_y):
         table_finale.index.name = x_labels[nom_variable_x] # de même pour l'index (la variable X sélectionnée)
         table_finale.sort_values(by=x_labels[nom_variable_x], ascending=True, inplace=True)
 
-        fig = px.bar(table_finale, y=y_labels[nom_variable_y], text=y_labels[nom_variable_y], height=550)
+        fig = px.bar(table_finale, y=y_labels[nom_variable_y],
+        #text=y_labels[nom_variable_y],
+        height=550)
 
         fig.update_traces(textposition='outside')
 
     else:
 
-        # Tri du dataframe par la colonne qui a été sélectionnée pour ensuite afficher dans l'ordre voulu sur le graphe
-        echantillon_trie_df = echantillon_df.sort_values(by=nom_variable_x)
-
-        fig = px.box(echantillon_trie_df, x=nom_variable_x, y=nom_variable_y, 
+        fig = px.box(echantillon_df, x=nom_variable_x, y=nom_variable_y,
                     labels={nom_variable_x: x_labels[nom_variable_x], nom_variable_y: y_labels[nom_variable_y]},
                     log_y=True)
 
